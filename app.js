@@ -40,38 +40,46 @@ const server = http.createServer((req, res) => {
    <head>
          <title>Sign Up</title>
          <meta charset="utf-8">
+		 <style>
+.content {
+  max-width: 500px;
+  margin: auto;
+}
+</style>
+<body>
+
+<div class="content"> 
+  <!-- Page content -->
+</div>
+
+</body>
       </head>
-      <body>
+      <body align="center">
 	   <form action="/" method="post">
 	  <h1> Sign Up Form </h1>
-         <h3> Fields marked (*) are mandatory </h3>
-         <fieldset align="center left" style="width:450px;">
-            <legend >Name</legend>
+         <fieldset align="left" style="width:450px;">
+            <legend ><h3>Fields marked (*) are mandatory</h3></legend>
             <br>
-            First Name *  <input type="text" name="firstName" placeholder="First Name"><br><br>
-            Last Name *  <input type="text" name="lastName" placeholder="Last Name"><br><br>
+            Name *  <input type="text" name="name" ><br><br>
+            Chinese Name *  <input type="text" name="chineseName"><br><br>
+			Gender *<input type="radio" name="gender" value="male" checked> Male
+			<input type="radio" name="gender" value="female"> Female
+			<input type="radio" name="gender" value="other"> Other<br><br>
+			DOB * <input type="date" name="dob"> <br><br>
+			Mobile * <input type="number" name="mobile"> <br><br>
+			E-mail * <input type="email" name="email"> <br><br>
+			Nationality *  <input type="text" name="nationality" ><br><br>
+			Country of Residence *  <input type="text" name="lastName" ><br><br>
+			We Chat Id  <input type="text" name="wechat"><br><br>
+			Passport No *  <input type="text" name="passportNo"><br><br>
+			Passport Validaty *  <input type="date" name="passportValidity"><br><br>
+			CMO Office by Region *  <input type="text" name="CMOOfficebyregion"><br><br>
+			No of Years in Europe TL *  <input type="number" name="NoOfYrsInEuropeTL"><br><br>
+			Bank Name *  <input type="text" name="bankName"><br><br>
+			Bank Acc No *  <input type="text" name="bankName"><br><br>
+			Requested By *  <input type="text" name="requestedBy"><br><br>
          </fieldset>
-         <br>
-         <fieldset align="center left" style="width:450px;">
-            <legend>Mobile</legend>
-            <br>
-            Mobile *  <input type="tel" name="mobile" maxlength="10" size=10 placeholder="Please enter a ten digit phone number"  style="width: 250px;" required><br><br>
-         </fieldset>
-         <br>
-        <br>
-         <fieldset align="center left" style="width:450px;">
-            <legend>Code</legend>
-            <br>
-            Post Code  *   <input type="zip" name="zip" pattern="[0-9]{6}" placeholder="Six digit zip code" title="Six digit zip code" style="width:150px;" required><br><br>
-         </fieldset>
-         <br>
-         <fieldset align="center left" style="width:450px;">
-            <legend>Password </legend>
-            <br>
-            Password * <input type="password" name="pwd" required> <br><br>
-         </fieldset>
-         <br> 
-         <div align = "right" style="width:450px;">
+         <br>  <div align = "right" style="width:450px;">
             <button>Sign Up	</button>
          </div>
          <br> 
