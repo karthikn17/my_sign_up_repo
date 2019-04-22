@@ -19,7 +19,16 @@ const server = http.createServer((req, res) => {
     if(error) {
         return console.dir(error);
     }
-    console.dir(`Parsed data belonging to ${result.firstName}`);
+    res.end(`<!DOCTYPE HTML>
+<html>
+   <head>
+         <title>Sign Up</title>
+         <meta charset="utf-8">
+      </head>
+      <body>
+	  <h2>Your sign up request has been successfully received<h2> <br><br>
+	  </body>
+	  </html>`);
 });
 
         });
