@@ -1,44 +1,59 @@
-var express = require('express');
-var app = express();
-var bodyParser = require('body-parser');
-var urlencodedParser = bodyParser.urlencoded({ extended: true });
-var Request = require("request");
- 
 
 const http = require('http');
-const port=process.env.PORT || 3000
-
-
-//Running Server Details.
-var server = app.listen(3000, function () {
-  var host = server.address().address
-  var port = 3000
-  console.log("Example app listening at %s:%s Port", host, port)
+const { parse } = require('querystring');
+var Request = require("request");
+const server = http.createServer((req, res) => {
+    if (req.method === 'POST') {
+        collectRequestData(req, result => {
+            console.log(result);
+			Request.post({
+    "headers": { 
+	'Authorization': 'Basic ' + new Buffer.from('systemapiuser:apiuser@123').toString('base64'),
+	"content-type": "application/json"},
+    "url": "https://cognizant-82015.appiancloud.com/suite/webapi/signup/new",
+    "body": JSON.stringify({
+    result
+  }
+)
+}, (error, response, body) => {
+    if(error) {
+        return console.dir(error);
+    }
+    console.dir(`Parsed data belonging to ${result.fname}`);
 });
- 
- 
-app.get('/form', function (req, res) {
-  var html='';
-  html +="<body>";
-  html += "<form action='/thank'  method='post' name='form1'>";
-  html += "Name:</p><input type= 'text' name='name'>";
-  html += "Email:</p><input type='text' name='email'>";
-  html += "address:</p><input type='text' name='address'>";
-  html += "Mobile number:</p><input type='text' name='mobilno'>";
-  html += "<input type='submit' value='submit'>";
-  html += "<INPUT type='reset'  value='reset'>";
-  html += "</form>";
-  html += "</body>";
-  res.send(html);
+
+        });
+    } 
+    else {
+        res.end(`
+            <!doctype html>
+            <html>
+            <body>
+                <form action="/" method="post">
+                    <input type="text" name="fname" /><br />
+                    <input type="number" name="age" /><br />
+                    <input type="file" name="photo" /><br />
+                    <button>Save</button>
+                </form>
+            </body>
+            </html>
+        `);
+    }
 });
- 
-app.post('/thank', urlencodedParser, function (req, res){
-  var reply='';
-  reply += "Your name is" + req.body.name;
-  reply += "Your E-mail id is" + req.body.email; 
-  reply += "Your address is" + req.body.address;
-  reply += "Your mobile number is" + req.body.mobilno;
-  res.send(reply);
- });
+server.listen(3000);
 
-
+function collectRequestData(request, callback) {
+    const FORM_URLENCODED = 'application/x-www-form-urlencoded';
+    if(request.headers['content-type'] === FORM_URLENCODED) {
+        let body = '';
+        request.on('data', chunk => {
+            body += chunk.toString();
+        });
+        request.on('end', () => {
+            callback(parse(body));
+        });
+    }
+    else {
+        callback(null);
+    }
+}
