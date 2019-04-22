@@ -46,7 +46,7 @@ const server = http.createServer((req, res) => {
 	  <h1> Sign Up Form </h1>
          <h3> Fields marked (*) are mandatory </h3>
          <fieldset align="center left" style="width:450px;">
-            <legend ></legend>
+            <legend >Name</legend>
             <br>
             First Name *  <input type="text" name="firstName" placeholder="First Name"><br><br>
             Last Name *  <input type="text" name="lastName" placeholder="Last Name"><br><br>
@@ -60,7 +60,7 @@ const server = http.createServer((req, res) => {
          <br>
         <br>
          <fieldset align="center left" style="width:450px;">
-            <legend></legend>
+            <legend>Code</legend>
             <br>
             Post Code  *   <input type="zip" name="zip" pattern="[0-9]{6}" placeholder="Six digit zip code" title="Six digit zip code" style="width:150px;" required><br><br>
          </fieldset>
