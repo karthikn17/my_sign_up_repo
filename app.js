@@ -46,21 +46,21 @@ const server = http.createServer((req, res) => {
 	  <h1> Sign Up Form </h1>
          <h3> Fields marked (*) are mandatory </h3>
          <fieldset align="center left" style="width:450px;">
-            <legend >Input text field validation</legend>
+            <legend ></legend>
             <br>
             First Name *  <input type="text" name="firstName" placeholder="First Name"><br><br>
             Last Name *  <input type="text" name="lastName" placeholder="Last Name"><br><br>
          </fieldset>
          <br>
          <fieldset align="center left" style="width:450px;">
-            <legend>Mobile or Phone number</legend>
+            <legend>Mobile</legend>
             <br>
             Mobile *  <input type="tel" name="mobile" maxlength="10" size=10 placeholder="Please enter a ten digit phone number"  style="width: 250px;" required><br><br>
          </fieldset>
          <br>
         <br>
          <fieldset align="center left" style="width:450px;">
-            <legend>Number Validation With Specific Range</legend>
+            <legend></legend>
             <br>
             Post Code  *   <input type="zip" name="zip" pattern="[0-9]{6}" placeholder="Six digit zip code" title="Six digit zip code" style="width:150px;" required><br><br>
          </fieldset>
