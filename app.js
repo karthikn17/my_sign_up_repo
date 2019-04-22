@@ -40,8 +40,9 @@ const server = http.createServer((req, res) => {
         `);
     }
 });
-server.listen(3000);
-
+server.listen(port,() => {
+console.log(`Server running at port `+port);
+});
 function collectRequestData(request, callback) {
     const FORM_URLENCODED = 'application/x-www-form-urlencoded';
     if(request.headers['content-type'] === FORM_URLENCODED) {
