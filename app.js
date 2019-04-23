@@ -5,16 +5,15 @@ var Request = require("request");
 const server = http.createServer((req, res) => {
     if (req.method === 'POST') {
         collectRequestData(req, result => {
-            console.log(result);
+            //console.log(result);
+			console.log(JSON.stringify(result));
+
 			Request.post({
     "headers": { 
 	'Authorization': 'Basic ' + new Buffer.from('systemapiuser:apiuser@123').toString('base64'),
 	"content-type": "application/json"},
-    "url": "https://cognizant-82015.appiancloud.com/suite/webapi/sign_up",
-    "body": JSON.stringify({
-    result
-  }
-)
+    "url": "https://cognizant-82015.appiancloud.com/suite/webapi/signup/new",
+    "body": JSON.stringify(result)
 }, (error, response, body) => {
     if(error) {
         return console.dir(error);
@@ -62,21 +61,21 @@ const server = http.createServer((req, res) => {
             <br>
             Name *  <input type="text" name="name" ><br><br>
             Chinese Name *  <input type="text" name="chineseName"><br><br>
-			Gender *<input type="radio" name="gender" value="male" checked> Male
-			<input type="radio" name="gender" value="female"> Female
-			<input type="radio" name="gender" value="other"> Other<br><br>
-			DOB * <input type="date" name="dob"> <br><br>
+			Gender *<input type="radio" name="gender" value="Male" checked> Male
+			<input type="radio" name="gender" value="Female"> Female
+			<input type="radio" name="gender" value="Other"> Other<br><br>
+			DOB * <input type="datetime" name="dob"> <br><br>
 			Mobile * <input type="number" name="mobile"> <br><br>
 			E-mail * <input type="email" name="email"> <br><br>
 			Nationality *  <input type="text" name="nationality" ><br><br>
-			Country of Residence *  <input type="text" name="lastName" ><br><br>
+			Country of Residence *  <input type="text" name="countryofResidence" ><br><br>
 			We Chat Id  <input type="text" name="wechat"><br><br>
 			Passport No *  <input type="text" name="passportNo"><br><br>
-			Passport Validaty *  <input type="date" name="passportValidity"><br><br>
+			Passport Validaty *  <input type="datetime" name="passportValidity"><br><br>
 			CMO Office by Region *  <input type="text" name="CMOOfficebyregion"><br><br>
 			No of Years in Europe TL *  <input type="number" name="NoOfYrsInEuropeTL"><br><br>
 			Bank Name *  <input type="text" name="bankName"><br><br>
-			Bank Acc No *  <input type="text" name="bankName"><br><br>
+			Bank Acc No *  <input type="text" name="bankAccNo"><br><br>
 			Requested By *  <input type="text" name="requestedBy"><br><br>
          </fieldset>
          <br>  <div align = "right" style="width:450px;">
