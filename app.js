@@ -64,14 +64,14 @@ const server = http.createServer((req, res) => {
 			Gender *<input type="radio" name="gender" value="Male" checked> Male
 			<input type="radio" name="gender" value="Female"> Female
 			<input type="radio" name="gender" value="Other"> Other<br><br>
-			DOB * <input type="datetime" name="dob"> <br><br>
+			DOB * <input type="date" name="dob"> <br><br>
 			Mobile * <input type="number" name="mobile"> <br><br>
 			E-mail * <input type="email" name="email"> <br><br>
 			Nationality *  <input type="text" name="nationality" ><br><br>
 			Country of Residence *  <input type="text" name="countryofResidence" ><br><br>
 			We Chat Id  <input type="text" name="wechat"><br><br>
 			Passport No *  <input type="text" name="passportNo"><br><br>
-			Passport Validaty *  <input type="datetime" name="passportValidity"><br><br>
+			Passport Validaty *  <input type="date" name="passportValidity"><br><br>
 			CMO Office by Region *  <input type="text" name="CMOOfficebyregion"><br><br>
 			No of Years in Europe TL *  <input type="number" name="NoOfYrsInEuropeTL"><br><br>
 			Bank Name *  <input type="text" name="bankName"><br><br>
