@@ -53,10 +53,10 @@ form {
 		 <style>
 form {
   /* Just to center the form on the page */
-  margin: 150px auto;
+  margin: 50px auto;
   width: 450px;
   /* To see the outline of the form */
-  padding: 0.5em;  
+  padding: 1em;  
   border: 1px solid #808080;
   border-radius: 1em;
 }
@@ -80,8 +80,8 @@ label {
 
 input, textarea {
 
-  padding: 15px;
-  margin: 5px 10px 22px 10px;
+  padding:5px;
+  margin: 5px 7px 7px 5px;
   display: inline-block;
   border: none;
   background: #f1f1f1;
@@ -89,8 +89,8 @@ input, textarea {
 
 input, selection {
 
-  padding: 15px;
-  margin: 5px 10px 22px 10px;
+ padding:5px;
+  margin: 5px 7px 7px 5px;
   display: inline-block;
   border: none;
   background: #f1f1f1;
@@ -106,7 +106,7 @@ textarea {
   vertical-align: top;
 
   /* To give enough room to type some text */
-  height: 5em;
+  height: 2em;
 }
 
 
