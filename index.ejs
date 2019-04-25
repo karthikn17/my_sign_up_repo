@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/style.css">
+	
+</head>
+<body>
+
+    <div class="main">
+
+        <div class="container">
+            <form action='/' method='POST' class="appointment-form" id="appointment-form">
+                <h2>Sign up form</h2>
+				<div class="form-group-1">
+				<table> 
+				<tr> <td>
+ <input type="text" name="name"  placeholder="Name *" required >
+             			</td>
+						<td><td>
+				<td> 
+              <input type="text" name="chineseName"  placeholder="Chinese Name *" required> </td>
+				</tr>
+				<tr> <td> <select name="gender" id="gender">
+                            <option slected value="">Gender</option>
+							<option slected value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select></td><td><td>
+				<td><input placeholder="DOB *" class="textbox-n" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" name="dob" id="date" required> </td>
+				</tr>
+				<tr> <td><input type="number" name="mobile" placeholder="Mobile *" required> 
+			 </td><td><td>
+				<td> <input type="email" name="email"   placeholder="E-mail *" required>
+			</td>
+				</tr>
+				<tr> <td> <input type="text" name="nationality" placeholder="Nationality *" required >
+			</td><td><td>
+				<td> <input type="text" name="countryofResidence" placeholder="Country of Residence *" required >
+			</td>
+				</tr>
+				<tr>
+				<td><input type="text" name="passportNo" placeholder="Passport No *" required>
+					
+			</td><td><td><td><input placeholder="Passport Validaty *" class="textbox-n" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" name="passportValidity" id="passportValidity" required>			
+			</td>
+				</tr>
+				<tr>
+				<td><input type="text" name="wechat" placeholder="We Chat Id *" required>
+			</td><td><td><td><input type="text" name="CMOOfficebyregion" placeholder="CMO Office by Region *" required>
+			</td>
+				</tr>
+				<tr>
+				<td><input type="text" name="bankAccNo" placeholder="Bank Acc No *">
+			</td><td><td><td><input type="text" name="bankName"  placeholder="Bank Name *">
+			</td>
+				</tr>
+				<tr><td><input type="number" name="NoOfYrsInEuropeTL" placeholder="No of Years in Europe TL *"required>
+			</td><td><td>
+				<td><input type="text" name="requestedBy" placeholder="Requested By *">
+        </td></tr>
+				</table>
+                
+			 </fieldset>         
+                   <input type="submit" value="Sign Up" />
+            </form>
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
