@@ -10,9 +10,9 @@ const server = http.createServer((req, res) => {
 
 			Request.post({
     "headers": { 
-	'Authorization': 'Basic ' + new Buffer.from('systemapiuser:apiuser@123').toString('base64'),
+	'Authorization': 'Basic ' + new Buffer.from('316892:Kar@sg17').toString('base64'),
 	"content-type": "application/json"},
-    "url": "https://cognizant-82015.appiancloud.com/suite/webapi/signup/new",
+    "url": "https://appianpoc.cognizant.com/suite/webapi/signup/new",
     "body": JSON.stringify(result)
 }, (error, response, body) => {
     if(error) {
